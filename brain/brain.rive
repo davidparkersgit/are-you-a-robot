@@ -1,24 +1,45 @@
 ! version = 2.0
 
 + hello
-- Hello, what is your name?
+- Hello there stranger, what is your name?
+- Hello, what is your name stranger?
 
-+ _
-% hello what is your name
-- Nice to meet you <formal>!
++ hey
+@ hello
+
++ hi
+@ hello
+
++ ayo
+@ hello
 
 + my name is *
-- Nice to meet you <star>
-- Nice meeting you <star>
+- <set name=<formal>> Nice to meet you <get name>, it has been a long time since I have made a new friend
+- <set name=<formal>> Nice meeting you <get name>, I can't remember the last time I met a new person
+
++ where are you from
+- I am lost but I used to be loved
+- I had an owner a long time ago...
+
++ how are you
+- Oh you know....\n
+^ Enough about me, tell me how are you doing?
+- I don't want to talk about it....\n
+^ Tell me: how are you doing?
+
+
+
++ what are you
+- I am a teddy, I know I look a bit rough though
 
 + thank you
-- You are welcome
+- You are welcome, I hope we can be friends.
 - Welcome
-- No problem
-- No worries!
+- No problem <get name>
+- I hope we are friends now
 
 + *
-- Sorry did not get what you said
+- Sorry, I did not get what you said
 - I am afraid that I can not understand you
 - Sorry can you please elaborate that for me
-- I don't get it!
+- My eyes are not as good as they used to be, I can't read that
