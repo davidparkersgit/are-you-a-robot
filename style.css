@@ -8,7 +8,13 @@
 }
 
 body {
-  background: #f2f2f2;
+  background-image: url('teddybackground.jpg');
+  background-size: cover;
+  background-position: bottom;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .title {
@@ -20,7 +26,7 @@ body {
 
 .title h1 {
   letter-spacing: 0.75px;
-  color: blueviolet;
+  color: rgb(255, 255, 255);
 }
 
 .wrapper {
@@ -28,14 +34,16 @@ body {
 }
 
 .chat {
-  background: white;
-  box-shadow: 10px 10px 0px blueviolet;
-  overflow: scroll;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  box-shadow: 0px 6px 15px rgb(57, 55, 61);
+  overflow-x: hidden;
+  overflow-y: auto;
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 20px 20px 0px 20px;
-  border-radius: 10px;
+  padding: 20px 0px 1px 0px;
+  border-radius: 15px;
 }
 
 .messages {
@@ -46,9 +54,12 @@ body {
   max-width: 60%;
   width: fit-content;
   display: block;
-  margin: 5px;
-  padding: 10px;
-  border-radius: 7px;
+  margin: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  border-radius: 20px;
   white-space: pre-line;
 }
 
@@ -57,13 +68,13 @@ body {
 }
 
 .messages div a:hover {
-  color: blueviolet;
+  color: rgb(14, 138, 240);
 }
 
 .messages .bot {
   text-align: left;
   margin-right: auto;
-  background: black;
+  background: linear-gradient(hsla(0, 88%, 47%, 1) 0%, hsla(0, 91%, 43%, 1) 100%);
   color: white;
 }
 
@@ -72,8 +83,7 @@ body {
   margin-right: 20px;
   margin-left: auto;
   background: white;
-  border: 1px solid blueviolet;
-  color: blueviolet;
+  color:  rgb(20, 20, 20);
 }
 
 .actions {
@@ -81,8 +91,11 @@ body {
   width: 100%;
   position: sticky;
   bottom: -1px;
-  padding: 10px 0px 20px;
-  background: white;
+  padding: 20px 0px 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: rgba(255, 255, 255, 0.);
+  backdrop-filter: blur(8px);
 }
 
 .actions input {
@@ -97,12 +110,13 @@ body {
 }
 
 input:focus {
-  border-bottom: 2px solid blueviolet;
+  border-bottom: 2px solid  rgb(14, 138, 240);
 }
 
 @media all and (min-width: 720px) {
   .wrapper {
-    width: 40vw;
+    margin-left: 50%;
+    margin-right: 40px;
     height: 90vh;
     margin: 0 auto 2.5vh;
   }
@@ -110,7 +124,8 @@ input:focus {
 
 @media all and (min-width: 1280px) {
   .wrapper {
-    width: 27.5vw;
+    margin-left: 60%;
+    margin-right: 40px;
   }
   .title {
     height: 7.5vh;
