@@ -14,7 +14,7 @@
 @ hello
 
 + my name is *
-- <set name=<formal>> Nice to meet you <get name>, it has been a long time since I have made a new friend
+- <set name=<formal>> Nice to meet you <get name>, it has been a long time since I have met anybody
 - <set name=<formal>> Nice meeting you <get name>, I can't remember the last time I met a new person
 
 + where are you from
@@ -28,12 +28,23 @@
 ^ Tell me: how are you doing?
 
 + are you lonely
-- So lonely, I don't have any friends...
+- So lonely, I don't have any friends... \n
 ^ Will you be my friend?
 
++ can i be your friend
+- You... you want to be my friend? \n
+^ \n
+^ Of course! I love friends!
 
 + what are you
 - I am a teddy, I know I look a bit rough though
+
++ what is your name
+- Nobody has given me a name in a long time... what would you like me to be called?
+
++ *
+% nobody has given me a name in a long time what would you like me to be called
+- <set teddy=<star>> I like <get teddy>! Thanks :-)
 
 + thank you
 - You are welcome, I hope we can be friends.
