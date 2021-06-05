@@ -5,7 +5,7 @@
 ! var master = localuser
 
 // Bot Variables
-! var name     = RB
+! var name     = friend
 
 // Substitutions
 ! sub &quot;    = "
@@ -170,3 +170,6 @@
 ! array measure    = inch in centimeter cm millimeter mm meter m inches centimeters millimeters meters
 ! array yes        = yes yeah yep yup ya yea sure ok
 ! array no         = no nah nope nay
+! array good       = good great positive amazing fantastic blessed
+! array bad        = bad sad
+! array neutral    = okay fine alright

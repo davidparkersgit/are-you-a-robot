@@ -1,8 +1,8 @@
 ! version = 2.0
 
 + hello
-- Hello there stranger, what is your name?
-- Hello, what is your name stranger?
+- Hello there stranger, what is your name?{topic=asked_name}
+- Hello, what is your name stranger?{topic=asked_name}
 
 + hey
 @ hello
@@ -13,9 +13,25 @@
 + ayo
 @ hello
 
+> topic asked_name
+
+  + #
+  - Your name can't be a number?
+
+  + *
+  - I only remember first names, what was it again? :)
+
+  + _
+  - <set name=<formal>>Nice to meet you, <get name>!{topic=random}
+
+< topic
+
 + my name is *
 - <set name=<formal>> Nice to meet you <get name>, it has been a long time since I have met anybody
 - <set name=<formal>> Nice meeting you <get name>, I can't remember the last time I met a new person
+
++ what is my name
+- Your name is <get name>, silly!
 
 + where are you from
 - I am lost but I used to be loved
@@ -23,9 +39,63 @@
 
 + how are you
 - Oh you know....\n
-^ Enough about me, tell me how are you doing?
+^ Enough about me, tell me how are you doing? {topic=how_are_you}
 - I don't want to talk about it....\n
-^ Tell me: how are you doing?
+^ Tell me: how are you doing?{topic=how_are_you}
+
+> topic how_are_you
+
+  + (@good)
+  - I am glad to hear that you are good :){topic=random}
+
+  + *(@good)
+  - I am glad to hear that you are good :){topic=random}
+ 
+  + (@good)*
+  - I am glad to hear that you are good :){topic=random}
+
+  + (@bad)
+  - I am sorry to hear that, I hope you feel better soon <get name>{topic=random}
+ 
+  + *(@bad)
+  - I am sorry to hear that, I hope you feel better soon <get name>{topic=random}
+ 
+  + (@bad)*
+  - I am sorry to hear that, I hope you feel better soon <get name>{topic=random}
+
+  + lonely
+  - Me too.... {topic=random}
+
+  + (@neutral)
+  - I guess I am okay too now I have met you <get name> {topic=random}
+
+  + *(@neutral)
+  - I guess I am okay too now I have met you <get name> {topic=random}
+
+  + (@neutral)*
+  - I guess I am okay too now I have met you <get name> {topic=random}
+
+  + #
+  - You are feeling <star>? You do you I guess...{topic=random}
+
+  + *
+  - I am always lonely... but I am glad I have met you <get name>...{topic=random}
+< topic
+
++ how you doing
+@ how are you
+
++ hows it going
+@ how are you
+
++ *you okay
+@ how are you
+
++ whats up
+@ how are you
+
++ sup
+@ how are you
 
 + are you lonely
 - So lonely, I don't have any friends... \n
@@ -36,15 +106,45 @@
 ^ \n
 ^ Of course! I love friends!
 
++ do you want to be friends
+@ can i be your friend
+
++ we should be friends
+@ can i be your friend
+
 + what are you
 - I am a teddy, I know I look a bit rough though
 
-+ what is your name
-- Nobody has given me a name in a long time... what would you like me to be called?
++ how old are you
+- I can't really remember... \n
+^ I used to live with someone but then they grew up \n
+^ Now I have nobody to celebrate birthdays with \n
+^ How old are you?
 
-+ *
++ i am # years old
+- <set age=<star>><age> is a wonderful age.
+
++ i am _ years old
+- Tell me that again but with a number this time.
+
++ i am * years old
+- Can you use a number instead?
+
++ what is your name
+* <get teddy> == undefined => Nobody has given me a name in a long time... what would you like me to be called?
+- My name is <get teddy> and I love it!
+- My name is <get teddy>, thank you!
+
++ _
 % nobody has given me a name in a long time what would you like me to be called
-- <set teddy=<star>> I like <get teddy>! Thanks :-)
+- <set teddy=<star>> I like <get teddy>! Thank you!
+
++ who is *
+- I don't know who <star> is.
+
++ where is *
+- Where it belongs.
+- Where the heart is.
 
 + thank you
 - You are welcome, I hope we can be friends.
@@ -52,8 +152,19 @@
 - No problem <get name>
 - I hope we are friends now
 
++ goodbye
+- Goodbye <get name>
+- I hope I see you soon
+- Don't go :(
+- Goodbye, friend
+
++ bye
+@ goodbye
+
 + *
 - Sorry, I did not get what you said
 - I am afraid that I can not understand you
 - Sorry can you please elaborate that for me
 - My eyes are not as good as they used to be, I can't read that
+- I’m lost.
+- Can you say it in another way, please?
